@@ -1,15 +1,7 @@
-import classNames from "classnames";
-import ProductProvider from "components/app/e-commerce/ProductProvider";
-import CourseProvider from "components/app/e-learning/CourseProvider";
-import ModalAuth from "components/authentication/modal/ModalAuth";
-import Footer from "components/footer/Footer";
-import NavbarTop from "components/navbar/top/NavbarTop";
-import NavbarVertical from "components/navbar/vertical/NavbarVertical";
-import { UserProvider } from "context/userContext";
 import React, { useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
-import { useAppContext } from "Main";
+import { useAppContext } from "../main";
 
 const MainLayout = () => {
   const { hash, pathname } = useLocation();
@@ -38,22 +30,22 @@ const MainLayout = () => {
 
   return (
     <div className={isFluid ? "container-fluid" : "container"}>
-      <UserProvider>
+      {/* <UserProvider>
         {(navbarPosition === "vertical" || navbarPosition === "combo") && (
           <NavbarVertical />
         )}
         <ProductProvider>
           <CourseProvider>
             <div className={classNames("content", { "pb-0": isKanban })}>
-              <NavbarTop />
-              {/*------ Main Routes ------*/}
-              <Outlet />
-              {!isKanban && <Footer />}
+              <NavbarTop /> */}
+      {/*------ Main Routes ------*/}
+      <Outlet />
+      {/*  {!isKanban && <Footer />}
             </div>
           </CourseProvider>
         </ProductProvider>
       </UserProvider>
-      <ModalAuth />
+      <ModalAuth /> */}
     </div>
   );
 };

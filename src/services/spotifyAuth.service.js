@@ -5,8 +5,8 @@ const API_URL = "https://accounts.spotify.com/api/";
 
 const data = qs.stringify({
   grant_type: "client_credentials",
-  client_id: $CLIENT_ID,
-  client_secret: $CLIENT_SECRET,
+  client_id: import.meta.env.VITE_SPOTIFY_CLIENT_ID,
+  client_secret: import.meta.env.VITE_SPOTIFY_CLIENT_SECRET,
 });
 
 const config = {
