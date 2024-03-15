@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState } from "react";
-import { Card, Col, Image, Row } from "react-bootstrap";
+import { Card, Col, Image, Row, Table } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import "../App.css";
 import AuthService from "../services/spotifyAuth.service";
@@ -81,9 +81,113 @@ const Landing = () => {
               </Button>
             </Col>
           </Row>
-          <div>{data === null ? null : <Artist />}</div>
         </Card.Header>
+        <div>{data === null ? null : <Artist />}</div>
       </Card>
+
+      <Table responsive>
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th className="text-end" scope="col">
+              Actions
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ricky Antony</td>
+            <td>ricky@example.com</td>
+            <td className="text-end">
+              <Button
+                icon="edit"
+                title="Edit"
+                variant="action"
+                className="p-0 me-2"
+              />
+              <Button
+                icon="trash-alt"
+                title="Delete"
+                variant="action"
+                className="p-0"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Emma Watson</td>
+            <td>emma@example.com</td>
+            <td className="text-end">
+              <Button
+                icon="edit"
+                title="Edit"
+                variant="action"
+                className="p-0 me-2"
+              />
+              <Button
+                icon="trash-alt"
+                title="Delete"
+                variant="action"
+                className="p-0"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Rowen Atkinson</td>
+            <td>rown@example.com</td>
+            <td className="text-end">
+              <Button
+                icon="edit"
+                title="Edit"
+                variant="action"
+                className="p-0 me-2"
+              />
+              <Button
+                icon="trash-alt"
+                title="Delete"
+                variant="action"
+                className="p-0"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Antony Hopkins</td>
+            <td>antony@example.com</td>
+            <td className="text-end">
+              <Button
+                icon="edit"
+                title="Edit"
+                variant="action"
+                className="p-0 me-2"
+              />
+              <Button
+                icon="trash-alt"
+                title="Delete"
+                variant="action"
+                className="p-0"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>Jennifer Schramm</td>
+            <td>jennifer@example.com</td>
+            <td className="text-end">
+              <Button
+                icon="edit"
+                title="Edit"
+                variant="action"
+                className="p-0 me-2"
+              />
+              <Button
+                icon="trash-alt"
+                title="Delete"
+                variant="action"
+                className="p-0"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </Table>
     </>
   );
 };
