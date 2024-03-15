@@ -50,38 +50,40 @@ const Landing = () => {
   function Artist() {
     console.log("IN HERE!!!!");
     return (
-      <Card>
+      <Card.Body>
         <h3>ARTIST NAME: {data.name}</h3>
         <p>FOLLOWERS: {data.followers.total}</p>
         <Image src={data.images[0].url} rounded />
-      </Card>
+      </Card.Body>
     );
   }
 
   return (
     <>
       <h1>Spotify App</h1>
-      <div className="card">
-        <Row>
-          <Col>
-            <Button
-              variant="primary"
-              className="me-2 mb-1"
-              onClick={handleSubmit}
-            >
-              Start Spotify
-            </Button>
-            <Button
-              variant="secondary"
-              className="me-2 mb-1"
-              onClick={handleGet}
-            >
-              Get Artist
-            </Button>
-          </Col>
-        </Row>
-      </div>
-      <div>{data === null ? null : <Artist />}</div>
+      <Card className="text-bg-secondary">
+        <Card.Header>
+          <Row>
+            <Col>
+              <Button
+                variant="primary"
+                className="me-2 mb-1"
+                onClick={handleSubmit}
+              >
+                Start Spotify
+              </Button>
+              <Button
+                variant="secondary"
+                className="me-2 mb-1"
+                onClick={handleGet}
+              >
+                Get Artist
+              </Button>
+            </Col>
+          </Row>
+          <div>{data === null ? null : <Artist />}</div>
+        </Card.Header>
+      </Card>
     </>
   );
 };
